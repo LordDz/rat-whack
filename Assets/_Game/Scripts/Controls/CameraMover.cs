@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using UnityEditor;
-using UnityEngine;
-using static UnityEditor.PlayerSettings;
+﻿using UnityEngine;
 
 namespace Assets._Game
 {

@@ -22,7 +22,6 @@ public class RatSpawner : MonoBehaviour
         }
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -45,6 +44,7 @@ public class RatSpawner : MonoBehaviour
         {
             RatManager.instance.RatSpawned(npc);
             npc.gameObject.SetActive(true);
+            npc.RatMovement.RatSpawned();
             PositionRat(npc);
         }
     }

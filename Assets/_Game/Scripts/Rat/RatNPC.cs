@@ -5,17 +5,11 @@ namespace Assets._Game.Scripts.Rat
 {
     public class RatNPC : MonoBehaviour
     {
-        
-        // Use this for initialization
-        void Start()
-        {
+        [SerializeField] RatMovement ratMovement;
 
-        }
+        public float desiredX = 0;
+        public float desiredY = 0;
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        public RatMovement RatMovement { get { return ratMovement; } }
     }
 }
