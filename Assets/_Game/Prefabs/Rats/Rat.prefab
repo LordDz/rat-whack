@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1159578718836253493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4733822857501916977}
+  m_Layer: 0
+  m_Name: Mouth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4733822857501916977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159578718836253493}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.6, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2383586533020708387}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3106897831928628313
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,8 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ratMovement: {fileID: 493381103575957499}
-  desiredX: 0
-  desiredY: 0
+  ratPickup: {fileID: 347263013522116437}
 --- !u!114 &493381103575957499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +165,10 @@ GameObject:
   - component: {fileID: 2383586533020708387}
   - component: {fileID: 3426175568778611711}
   - component: {fileID: 3580420117262415178}
-  - component: {fileID: 6353850999785137432}
+  - component: {fileID: 347263013522116437}
   - component: {fileID: 2976595052206679205}
   m_Layer: 0
-  m_Name: Bite
+  m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,7 +186,8 @@ Transform:
   m_LocalPosition: {x: -3.7555, y: 0.002, z: -0.089}
   m_LocalScale: {x: 1.0767232, y: 1.2632345, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4733822857501916977}
   m_Father: {fileID: 176465271831135442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3426175568778611711
@@ -225,51 +256,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioScratch: {fileID: 2976595052206679205}
   bloodPrefab: {fileID: 5776896099131067966, guid: 0efca094c84174e498d1329d4ee994ee, type: 3}
---- !u!61 &6353850999785137432
-BoxCollider2D:
+--- !u!114 &347263013522116437
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4324706542396355989}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a68096f8bfafb42baddd4762756964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headParent: {fileID: 4733822857501916977}
+  ratMovement: {fileID: 493381103575957499}
 --- !u!82 &2976595052206679205
 AudioSource:
   m_ObjectHideFlags: 0

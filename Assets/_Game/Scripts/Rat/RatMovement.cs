@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 namespace Assets._Game.Scripts.Rat
 {
@@ -79,6 +78,24 @@ namespace Assets._Game.Scripts.Rat
         {
             desiredX = x;
             desiredY = y;
+        }
+
+        public void GoToClosestFoodPile()
+        {
+            float lowestDist = 9000;
+            int selectedIndex = 0;
+
+            for (int i = 0; i < RatFoodPiles.instance.foods.Count; i++)
+            {
+                float dist = Vector3.Distance(transform.position, RatFoodPiles.instance.foods[i].transform.position);
+                
+                if (dist < lowestDist)
+                {
+                    selectedIndex = i;
+                }
+            }
+            Vector3 pos = RatFoodPiles.instance.foods[selectedIndex].transform.position;
+            SetDesiredXY(pos.x, pos.y);
         }
 
         private void MoveTowardPos(Vector3 pos)

@@ -10,7 +10,7 @@ namespace Assets._Game.Scripts.Rat
 
         public List<RatNPC> ratPrefabs = new List<RatNPC>();
         private List<RatNPC> rats = new List<RatNPC>();
-        private List<RatNPC> listActiveRats = new List<RatNPC>();
+        public List<RatNPC> listActiveRats = new List<RatNPC>();
 
         private void Awake()
         {

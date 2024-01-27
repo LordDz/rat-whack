@@ -13,7 +13,6 @@ namespace Assets._Game.Scripts.Effects
         {
             Color color = spriteRenderer.color;
             float a = color.a - (fadeOut * Time.deltaTime);
-            Debug.Log("a: " + a);
 
             spriteRenderer.color = new Color(color.r, color.g, color.b, a);
 

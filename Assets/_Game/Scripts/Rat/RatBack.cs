@@ -60,6 +60,8 @@ namespace Assets._Game.Scripts.Rat
 
         private void RatScratched()
         {
+            ScoreHolder.Instance.AddScratch();
+
             movement.RatScratched();
             audioScratch.Play();
         }
@@ -68,7 +70,7 @@ namespace Assets._Game.Scripts.Rat
         {
             scratches = 0;
             RatManager.instance.RatDespawned(npc);
-            ScoreHolder.Instance.AddScore();
+            ScoreHolder.Instance.AddWhacked();
         }
     }
 }

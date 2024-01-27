@@ -9,8 +9,11 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] AudioSource audioScratch;
         [SerializeField] GameObject bloodPrefab;
 
+        [SerializeField] bool canBite = false;
+
         void OnMouseEnter()
         {
+            if (!canBite) return;
             DealDamage();
             SpawnBlood();
         }
@@ -18,6 +21,7 @@ namespace Assets._Game.Scripts.Rat
         private void DealDamage()
         {
             PlayerHealth.instance.TakeDamage();
+            ScoreHolder.Instance.AddBitten();
         }
 
         private void SpawnBlood()

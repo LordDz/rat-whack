@@ -28,6 +28,7 @@ namespace Assets._Game.Scripts.Player
             Debug.Log("OUCH: " + health);
 
             CameraShake.Shake(shakeDuration, shakeAmount);
+
         }
     }
 }
