@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
-
 namespace Assets._Game.Scripts.Player
 {
+
+
     public class PlayerHealth : MonoBehaviour
     {
         [SerializeField] int healthDefault = 10;
@@ -10,7 +11,8 @@ namespace Assets._Game.Scripts.Player
         [SerializeField] float shakeAmount = 4f;
         public static PlayerHealth instance;
 
-        [SerializeField] AudioSource audioSource;
+        [SerializeField] AudioSource audioScream;
+
 
         private int health = 0;
 
@@ -23,11 +25,15 @@ namespace Assets._Game.Scripts.Player
 
         public void TakeDamage()
         {
-            audioSource.Play();
+            audioScream.Play();
             health--;
             Debug.Log("OUCH: " + health);
 
             CameraShake.Shake(shakeDuration, shakeAmount);
+
+
+            //var tmpScreenPos = Camera.main.WorldToScreenPoint(Input.mousePosition);
+
 
         }
     }

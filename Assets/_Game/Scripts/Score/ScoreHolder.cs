@@ -34,14 +34,14 @@ namespace Assets._Game.Scripts.Score
         public void AddFoodPickedUp()
         {
             timesPickedUp += 1;
-            Debug.Log("Pickups: " + timesPickedUp);
+            //Debug.Log("Pickups: " + timesPickedUp);
 
         }
 
         public void AddFoodCollected()
         {
             timesFoodBroughtToPiles += 1;
-            Debug.Log("Food: " + timesFoodBroughtToPiles);
+            //Debug.Log("Food: " + timesFoodBroughtToPiles);
         }
     }
 }

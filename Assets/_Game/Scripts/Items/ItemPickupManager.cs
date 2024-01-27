@@ -65,7 +65,7 @@ namespace Assets._Game.Scripts.Items
             foreach (var food in RatFoodPiles.instance.foods)
             {
                 Vector3 foodPos = food.transform.position;
-                Debug.Log("foodpos: " + foodPos);
+
                 for (int i = 0; i < pickupsCarriedByRats.Count; i++)
                 {
                     Vector3 pickupPos = pickupsCarriedByRats[i].transform.position;

@@ -66,7 +66,6 @@ namespace Assets._Game.Scripts.Rat
                     if (cooldownWait <= 0)
                     {
                         cooldownMoving = timeMoving;
-                        ratBack.ResetScratches();
                     }
                 }
             }

@@ -6,9 +6,7 @@ namespace Assets._Game.Scripts.Rat
 {
     public class RatBite : MonoBehaviour
     {
-        [SerializeField] AudioSource audioScratch;
         [SerializeField] GameObject bloodPrefab;
-
         [SerializeField] bool canBite = false;
 
         void OnMouseEnter()
@@ -21,6 +19,9 @@ namespace Assets._Game.Scripts.Rat
         private void DealDamage()
         {
             PlayerHealth.instance.TakeDamage();
+            Debug.Log("transform.parent.localScale.x: " + transform.parent.localScale.x);
+            CursorSprite.instance.MoveCursor(transform.position, (int)transform.parent.localScale.x);
+
             ScoreHolder.Instance.AddBitten();
         }
 

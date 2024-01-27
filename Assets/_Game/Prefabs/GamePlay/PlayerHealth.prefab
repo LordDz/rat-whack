@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthDefault: 10
   shakeDuration: 0.125
-  shakeAmount: 0.5
-  audioSource: {fileID: 4728897200499084944}
+  shakeAmount: 0.35
+  audioScream: {fileID: 4728897200499084944}
 --- !u!82 &4728897200499084944
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 50443eab0708aba46bf5122c0a154888, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
