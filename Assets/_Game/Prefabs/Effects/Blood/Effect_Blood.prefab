@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4796826453428746245}
   - component: {fileID: 2933185151871242892}
+  - component: {fileID: 8191646829681239241}
   m_Layer: 0
   m_Name: Effect_Blood
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.91194963, g: 0.16346256, b: 0.16346256, a: 0.43529412}
+  m_Color: {r: 0.91194963, g: 0.16346256, b: 0.16346256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8191646829681239241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5776896099131067966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b1ea12628c3ac846a1de0dda6f1b020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 2933185151871242892}
+  fadeOut: 1
