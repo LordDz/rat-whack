@@ -15,8 +15,8 @@ namespace Assets._Game.Scripts.Items
         private float sizeX = 2;
         private float sizeY = 4;
 
-        private float pileX = 2;
-        private float pileY = 3;
+        private float pileX = 1;
+        private float pileY = 1;
 
 
         // Update is called once per frame
@@ -32,24 +32,27 @@ namespace Assets._Game.Scripts.Items
 
             foreach (var rat in RatManager.instance.listActiveRats)
             {
+                if (rat.RatPickup.isCarringItem) continue;
+
                 Vector3 ratPos = rat.RatPickup.transform.position;
                 for (int i = 0; i < pickupsActive.Count; i++)
                 {
                     Vector3 pickupPos = pickupsActive[i].transform.position;
 
-                    if (pickupPos.x - sizeX > ratPos.x && ratPos.x < pickupPos.x + sizeX)
-                    {
-                        if (pickupPos.y - sizeY > ratPos.y && ratPos.y < pickupPos.y + sizeY)
-                        {
-                            //Collision!
-                            ItemPickup pickup = pickupsActive[i];
-                            rat.RatPickup.ItemPickup(pickup);
-                            pickupsActive.Remove(pickup);
-                            pickupsCarriedByRats.Add(pickup);
-                            ScoreHolder.Instance.AddFoodPickedUp();
+                    bool isInRangeX = pickupPos.x - sizeX < ratPos.x && ratPos.x < pickupPos.x + sizeX;
+                    bool isInRangeY = pickupPos.y - sizeY < ratPos.y && ratPos.y < pickupPos.y + sizeY;
 
-                            return;
-                        }
+                    if (isInRangeX && isInRangeY)
+                    {
+                        //Collision!
+                        ItemPickup pickup = pickupsActive[i];
+                        pickup.EggPickedUp(rat.RatPickup);
+                        rat.RatPickup.ItemPickup(pickup);
+                        pickupsActive.Remove(pickup);
+                        pickupsCarriedByRats.Add(pickup);
+                        ScoreHolder.Instance.AddFoodPickedUp();
+
+                        return;
                     }
                 }
             }
@@ -62,21 +65,24 @@ namespace Assets._Game.Scripts.Items
             foreach (var food in RatFoodPiles.instance.foods)
             {
                 Vector3 foodPos = food.transform.position;
+                Debug.Log("foodpos: " + foodPos);
                 for (int i = 0; i < pickupsCarriedByRats.Count; i++)
                 {
                     Vector3 pickupPos = pickupsCarriedByRats[i].transform.position;
 
-                    if (pickupPos.x - pileX > foodPos.x && foodPos.x < pickupPos.x + pileX)
-                    {
-                        if (pickupPos.y - pileY > foodPos.y && foodPos.y < pickupPos.y + pileY)
-                        {
-                            ItemPickup pickup = pickupsCarriedByRats[i];
-                            pickupsCarriedByRats.Remove(pickup);
-                            pickup.transform.SetParent(null);
-                            ScoreHolder.Instance.AddFoodCollected();
+                    bool isInRangeX = foodPos.x - pileX < pickupPos.x && pickupPos.x < foodPos.x + pileX;
+                    bool isInRangeY = foodPos.y - pileY < pickupPos.y && pickupPos.y < foodPos.y + pileY;
 
-                            return;
-                        }
+                    if (isInRangeX && isInRangeY)
+                    {
+                        ItemPickup pickup = pickupsCarriedByRats[i];
+                        pickup.EggDropped();
+                        pickupsCarriedByRats.Remove(pickup);
+                        pickup.transform.SetParent(null);
+                        pickup.EggDropped();
+                        ScoreHolder.Instance.AddFoodCollected();
+
+                        return;
                     }
                 }
             }

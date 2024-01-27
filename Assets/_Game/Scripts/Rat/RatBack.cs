@@ -8,6 +8,7 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] AudioSource audioScratch;
         [SerializeField] RatNPC npc;
         [SerializeField] RatMovement movement;
+        [SerializeField] RatSpriteChanger ratSpriteChanger;
         [SerializeField] SpriteRenderer spriteRenderer;
 
         public int scratches = 0;
@@ -61,6 +62,7 @@ namespace Assets._Game.Scripts.Rat
         private void RatScratched()
         {
             ScoreHolder.Instance.AddScratch();
+            ratSpriteChanger.StartChanging();
 
             movement.RatScratched();
             audioScratch.Play();

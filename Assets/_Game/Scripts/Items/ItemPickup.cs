@@ -6,6 +6,9 @@ namespace Assets._Game.Scripts.Items
 {
     public class ItemPickup : MonoBehaviour
     {
+        [SerializeField] SpriteRenderer spriteRenderer;
+
+        private RatPickup ratPickup;
         //private void OnTriggerEnter(Collider other)
         //{
         //    Debug.Log("col: " + other.gameObject.name);
@@ -18,5 +21,21 @@ namespace Assets._Game.Scripts.Items
         //        rat.RatPickup.ItemPickup(this);
         //    }
         //}
+
+        public void EggPickedUp(RatPickup pickup)
+        {
+            spriteRenderer.color = Color.red;
+            ratPickup = pickup;
+        }
+
+        public void EggDropped()
+        {
+            spriteRenderer.color = Color.blue;
+            if (ratPickup != null)
+            {
+                ratPickup.ItemDrop();
+                ratPickup = null;
+            }
+        }
     }
 }

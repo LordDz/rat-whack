@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: canBite
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4324706542396355989, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_IsActive

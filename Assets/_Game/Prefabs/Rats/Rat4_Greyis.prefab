@@ -108,10 +108,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6298479965936150558, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8a7019af067012c40a60477d57f32be1, type: 3}
+    - target: {fileID: 6298479965936150558, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9e2f22774a2935448a14dd9b9793edc0, type: 3}
     - target: {fileID: 6606400649788333257, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a83d712dec0913541ac916c5d0ea37ec, type: 3}
+      objectReference: {fileID: 21300000, guid: 8a7019af067012c40a60477d57f32be1, type: 3}
+    - target: {fileID: 6606400649788333257, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
