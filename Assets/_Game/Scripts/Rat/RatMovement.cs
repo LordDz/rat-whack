@@ -72,7 +72,7 @@ namespace Assets._Game.Scripts.Rat
             Vector3 pos = RatSpawner.instance.spawnPoints[Random.Range(0, range)].transform.position;
 
             SetDesiredXY(pos.x, pos.y);
-            Debug.Log("Setting random: " + pos);
+            //Debug.Log("Setting random: " + pos);
         }
 
         public void SetDesiredXY(float x, float y)

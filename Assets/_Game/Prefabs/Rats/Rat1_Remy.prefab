@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3106897831928628313, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Name
-      value: Rat1
+      value: Rat1_Remy
       objectReference: {fileID: 0}
     - target: {fileID: 3235103243344518536, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Pivot.x
@@ -102,6 +102,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3235103243344518536, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324706542396355989, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
