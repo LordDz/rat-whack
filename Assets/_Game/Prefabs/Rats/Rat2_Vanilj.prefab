@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 493381103575957499, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: followMouseCursor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1807243070816185480, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Color.g
       value: 0.039512515
@@ -102,6 +106,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: canBite
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: bloodOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: bloodOffsetX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: bloodOffsetY
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4324706542396355989, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}

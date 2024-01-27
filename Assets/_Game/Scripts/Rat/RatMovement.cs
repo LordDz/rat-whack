@@ -8,8 +8,8 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] float ratSpeedX = 0.1f;
         [SerializeField] float ratSpeedY = 0.1f;
 
-        [SerializeField] float whackSpeedX = 1f;
-        [SerializeField] float whackSpeedY = 1f;
+        [SerializeField] float tickledSpeedX = 1f;
+        [SerializeField] float tickledSpeedY = 1f;
 
         [SerializeField] float timeMoving = 1f;
         [SerializeField] float timeBetweenWait = 1;
@@ -19,7 +19,9 @@ namespace Assets._Game.Scripts.Rat
 
         [SerializeField] SpriteRenderer spriteRenderer;
 
-        public bool IsWhacked { get; private set; }
+        [SerializeField] bool followMouseCursor = false;
+
+        public bool IsTickled { get; private set; }
 
         private float cooldownMoving = 0;
         private float cooldownWait = 0;
@@ -38,9 +40,9 @@ namespace Assets._Game.Scripts.Rat
             cooldownWait = timeScratches;
         }
 
-        public void RatWhacked()
+        public void RatTickled()
         {
-            IsWhacked = true;
+            IsTickled = true;
             GoToClosestFoodPile();
         }
 
@@ -77,11 +79,23 @@ namespace Assets._Game.Scripts.Rat
 
         private void SetRandomXY()
         {
+            if (followMouseCursor)
+            {
+                var mousePos = Input.mousePosition;
+                mousePos = new Vector3(-mousePos.x, -mousePos.y, -2);
+                Debug.Log("MousePos1: " + mousePos);
+                mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+                Debug.Log("MousePos2: " + mousePos);
+
+                SetDesiredXY(mousePos.x, mousePos.y);
+                IsTickled = false;
+                return;
+            }
             int range = RatSpawner.instance.spawnPoints.Count - 1;
             Vector3 pos = RatSpawner.instance.spawnPoints[Random.Range(0, range)].transform.position;
 
             SetDesiredXY(pos.x, pos.y);
-            IsWhacked = false;
+            IsTickled = false;
             //Debug.Log("Setting random: " + pos);
         }
 
@@ -111,8 +125,8 @@ namespace Assets._Game.Scripts.Rat
 
         private void MoveTowardPos(Vector3 pos)
         {
-            float x = IsWhacked ? whackSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
-            float y = IsWhacked ? whackSpeedX * Time.deltaTime : ratSpeedY * Time.deltaTime;
+            float x = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
+            float y = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedY * Time.deltaTime;
 
             //X
             if (pos.x < desiredX)

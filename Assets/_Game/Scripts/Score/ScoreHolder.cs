@@ -6,7 +6,7 @@ namespace Assets._Game.Scripts.Score
     {
         public static ScoreHolder Instance;
         public int timesScratched = 0;
-        public int timesWhacked = 0;
+        public int timesTickled = 0;
         public int timesBitten = 0;
         public int timesPickedUp = 0;
         public int timesFoodBroughtToPiles = 0;
@@ -21,9 +21,9 @@ namespace Assets._Game.Scripts.Score
             timesScratched += 1;
         }
 
-        public void AddWhacked()
+        public void AddTickled()
         {
-            timesWhacked += 1;
+            timesTickled += 1;
         }
 
         public void AddBitten()

@@ -6,7 +6,7 @@ namespace Assets._Game.Scripts.Rat
     public class RatBack : MonoBehaviour
     {
         [SerializeField] AudioSource audioScratch;
-        [SerializeField] AudioSource audioWhacked;
+        [SerializeField] AudioSource audioTickled;
         [SerializeField] RatNPC npc;
         [SerializeField] RatMovement movement;
         [SerializeField] RatSpriteChanger ratSpriteChanger;
@@ -37,7 +37,7 @@ namespace Assets._Game.Scripts.Rat
 
         void OnMouseEnter()
         {
-            if (!npc.RatMovement.IsWhacked)
+            if (!npc.RatMovement.IsTickled)
             {
                 scratches++;
                 CursorSprite.instance.StartScratching(true);
@@ -77,7 +77,7 @@ namespace Assets._Game.Scripts.Rat
 
                 case 4:
                     //spriteRenderer.color = Color.white;
-                    RatWhacked();
+                    RatTickled();
                     break;
             }
         }
@@ -91,15 +91,18 @@ namespace Assets._Game.Scripts.Rat
             audioScratch.Play();
         }
 
-        private void RatWhacked()
+        private void RatTickled()
         {
             scratches = 0;
             cooldownScratch = 0;
             RatManager.instance.RatDespawned(npc);
-            npc.RatMovement.RatWhacked();
-            audioWhacked.Play();
+            npc.RatMovement.RatTickled();
+            if (audioTickled != null)
+            {
+                audioTickled.Play();
+            }
 
-            ScoreHolder.Instance.AddWhacked();
+            ScoreHolder.Instance.AddTickled();
         }
     }
 }

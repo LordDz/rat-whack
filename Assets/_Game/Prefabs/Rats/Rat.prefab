@@ -146,15 +146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3985d89d4830c1048ba7c200ec11df15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratSpeedX: 5
-  ratSpeedY: 5
-  whackSpeedX: 12
-  whackSpeedY: 12
+  ratSpeedX: 6
+  ratSpeedY: 6
+  tickledSpeedX: 16
+  tickledSpeedY: 16
   timeMoving: 2
   timeBetweenWait: 0.2
   timeScratches: 0.5
   ratBack: {fileID: 5137653504479183187}
   spriteRenderer: {fileID: 6606400649788333257}
+  followMouseCursor: 0
   desiredX: 0
   desiredY: 0
 --- !u!114 &6298479965936150558
@@ -275,8 +276,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38dfd338add97640acce587fc49c5c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bloodPrefab: {fileID: 5776896099131067966, guid: 0efca094c84174e498d1329d4ee994ee, type: 3}
+  bloodOffsetX: 0.5
+  bloodOffsetY: 0.5
+  bloodPrefabs:
+  - {fileID: 5776896099131067966, guid: 0efca094c84174e498d1329d4ee994ee, type: 3}
+  - {fileID: 5776896099131067966, guid: d81468c6b2e15484bb56cb18b8f70b2e, type: 3}
+  - {fileID: 5776896099131067966, guid: 5d1df683136b05a4bb93b7f42b9f26fd, type: 3}
   canBite: 0
+  npc: {fileID: 6048847082186164217}
 --- !u!114 &347263013522116437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioScratch: {fileID: 9125144131877223256}
-  audioWhacked: {fileID: 5341313613848120585}
+  audioTickled: {fileID: 5341313613848120585}
   npc: {fileID: 6048847082186164217}
   movement: {fileID: 493381103575957499}
   ratSpriteChanger: {fileID: 6298479965936150558}
