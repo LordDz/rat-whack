@@ -7,6 +7,10 @@ namespace Assets._Game.Scripts.Rat
     {
         [SerializeField] float ratSpeedX = 0.1f;
         [SerializeField] float ratSpeedY = 0.1f;
+
+        [SerializeField] float whackSpeedX = 1f;
+        [SerializeField] float whackSpeedY = 1f;
+
         [SerializeField] float timeMoving = 1f;
         [SerializeField] float timeBetweenWait = 1;
         [SerializeField] float timeScratches = 0.5f;
@@ -14,6 +18,8 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] RatBack ratBack;
 
         [SerializeField] SpriteRenderer spriteRenderer;
+
+        public bool IsWhacked { get; private set; }
 
         private float cooldownMoving = 0;
         private float cooldownWait = 0;
@@ -30,7 +36,12 @@ namespace Assets._Game.Scripts.Rat
             //TODO: Do something cool here
             cooldownMoving = 0;
             cooldownWait = timeScratches;
+        }
 
+        public void RatWhacked()
+        {
+            IsWhacked = true;
+            GoToClosestFoodPile();
         }
 
         private void Update()
@@ -71,6 +82,7 @@ namespace Assets._Game.Scripts.Rat
             Vector3 pos = RatSpawner.instance.spawnPoints[Random.Range(0, range)].transform.position;
 
             SetDesiredXY(pos.x, pos.y);
+            IsWhacked = false;
             //Debug.Log("Setting random: " + pos);
         }
 
@@ -100,8 +112,8 @@ namespace Assets._Game.Scripts.Rat
 
         private void MoveTowardPos(Vector3 pos)
         {
-            float x = ratSpeedX * Time.deltaTime;
-            float y = ratSpeedY * Time.deltaTime;
+            float x = IsWhacked ? whackSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
+            float y = IsWhacked ? whackSpeedX * Time.deltaTime : ratSpeedY * Time.deltaTime;
 
             //X
             if (pos.x < desiredX)

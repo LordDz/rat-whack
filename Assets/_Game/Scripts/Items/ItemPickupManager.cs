@@ -32,7 +32,7 @@ namespace Assets._Game.Scripts.Items
 
             foreach (var rat in RatManager.instance.listActiveRats)
             {
-                if (rat.RatPickup.isCarringItem) continue;
+                if (rat.RatPickup.isCarringItem || rat.RatMovement.IsWhacked) continue;
 
                 Vector3 ratPos = rat.RatPickup.transform.position;
                 for (int i = 0; i < pickupsActive.Count; i++)

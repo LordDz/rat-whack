@@ -22,9 +22,11 @@ namespace Assets._Game.Scripts.Rat
 
         void OnMouseEnter()
         {
-            scratches++;
-            
-            CheckScratches();
+            if (!npc.RatMovement.IsWhacked)
+            {
+                scratches++;
+                CheckScratches();
+            }
         }
 
         private void CheckScratches()
@@ -32,28 +34,26 @@ namespace Assets._Game.Scripts.Rat
             switch (scratches)
             {
                 case 0:
-                    spriteRenderer.color = Color.white;
+                    //spriteRenderer.color = Color.white;
                     break;
 
                 case 1:
-                    spriteRenderer.color = Color.green;
+                    //spriteRenderer.color = Color.green;
                     RatScratched();
                     break;
 
                 case 2:
-                    spriteRenderer.color = Color.blue;
-
+                    //spriteRenderer.color = Color.blue;
                     RatScratched();
                     break;
 
                 case 3:
-                    spriteRenderer.color = Color.red;
-
+                    //spriteRenderer.color = Color.red;
                     RatScratched();
                     break;
 
                 case 4:
-                    spriteRenderer.color = Color.white;
+                    //spriteRenderer.color = Color.white;
                     RatWhacked();
                     break;
             }
@@ -72,6 +72,7 @@ namespace Assets._Game.Scripts.Rat
         {
             scratches = 0;
             RatManager.instance.RatDespawned(npc);
+            npc.RatMovement.RatWhacked();
             ScoreHolder.Instance.AddWhacked();
         }
     }

@@ -34,8 +34,8 @@ namespace Assets._Game.Scripts.Rat
 
         public void RatDespawned(RatNPC npc)
         {
-            npc.gameObject.SetActive(false);
-            listActiveRats.Remove(npc);
+            //npc.gameObject.SetActive(false);
+            //listActiveRats.Remove(npc);
         }
 
         public RatNPC GetNotActiveRat()

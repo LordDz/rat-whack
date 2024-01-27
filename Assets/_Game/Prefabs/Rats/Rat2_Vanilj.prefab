@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3426175568778611711, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3580420117262415178, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: canBite
       value: 1
@@ -112,6 +116,10 @@ PrefabInstance:
       propertyPath: sprites.Array.data[1]
       value: 
       objectReference: {fileID: 21300000, guid: 54f2aec3dda2a3f4aa9b2af506c2c8b4, type: 3}
+    - target: {fileID: 6414964249620773646, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6606400649788333257, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -123,5 +131,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4324706542396355989, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4498395432941819901}
   m_SourcePrefab: {fileID: 100100000, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+--- !u!1 &3365021903689731687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4324706542396355989, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+  m_PrefabInstance: {fileID: 1348410516099464178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4498395432941819901
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3365021903689731687}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.2}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
