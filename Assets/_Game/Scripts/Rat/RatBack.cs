@@ -73,23 +73,24 @@ namespace Assets._Game.Scripts.Rat
                     break;
 
                 case 2:
-                    cooldownScratch = scratchWait;
+                    //cooldownScratch = scratchWait;
 
                     //spriteRenderer.color = Color.blue;
-                    RatScratched();
-                    break;
-
-                case 3:
-                    cooldownScratch = scratchWait;
-
-                    //spriteRenderer.color = Color.red;
-                    RatScratched();
-                    break;
-
-                case 4:
-                    //spriteRenderer.color = Color.white;
                     RatTickled();
+
+                    //RatScratched();
                     break;
+
+                //case 3:
+                //    cooldownScratch = scratchWait;
+
+                //    //spriteRenderer.color = Color.red;
+                //    RatScratched();
+                //    break;
+
+                //case 4:
+                //    //spriteRenderer.color = Color.white;
+                //    break;
             }
         }
 
@@ -108,6 +109,7 @@ namespace Assets._Game.Scripts.Rat
             cooldownScratch = 0;
             RatManager.instance.RatDespawned(npc);
             npc.RatMovement.RatTickled();
+
             if (audioTickled != null)
             {
                 audioTickled.Play();

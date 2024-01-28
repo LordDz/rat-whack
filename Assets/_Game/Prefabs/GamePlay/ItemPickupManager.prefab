@@ -44,5 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f080691c2468f73428ec50be5d823463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
-  pickupsActive: []
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pickupsActive:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  pickupsCarriedByRats: []

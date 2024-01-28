@@ -27,8 +27,13 @@ namespace Assets._Game.Scripts.Items
         // Update is called once per frame
         void Update()
         {
-            CheckCollisions();
+            //CheckCollisions();
             //CheckCarriedByRats();
+        }
+
+        public void AddItem(ItemPickup item)
+        {
+            pickupsActive.Add(item);
         }
 
         private void CheckCollisions()

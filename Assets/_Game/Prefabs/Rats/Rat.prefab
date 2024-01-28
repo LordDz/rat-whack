@@ -150,8 +150,6 @@ MonoBehaviour:
   ratSpeedY: 6
   tickledSpeedX: 32
   tickledSpeedY: 32
-  timeMoving: 2
-  timeBetweenWait: 0.2
   timeScratches: 0.5
   ratBack: {fileID: 5137653504479183187}
   pickup: {fileID: 347263013522116437}
@@ -568,7 +566,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -664,7 +662,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
