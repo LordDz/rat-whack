@@ -155,9 +155,9 @@ MonoBehaviour:
   pickup: {fileID: 347263013522116437}
   spriteRenderer: {fileID: 6606400649788333257}
   followMouseCursor: 0
-  zRotMin: -4
-  zRotMax: 4
-  zRotSpeed: 0.06
+  zRotMin: -3
+  zRotMax: 3
+  zRotSpeed: 0.08
   desiredX: 0
   desiredY: 0
 --- !u!114 &6298479965936150558
