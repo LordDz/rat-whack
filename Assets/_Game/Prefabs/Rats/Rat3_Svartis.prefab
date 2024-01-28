@@ -24,14 +24,6 @@ PrefabInstance:
       propertyPath: whackSpeedY
       value: 16
       objectReference: {fileID: 0}
-    - target: {fileID: 493381103575957499, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
-      propertyPath: tickledSpeedX
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 493381103575957499, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
-      propertyPath: tickledSpeedY
-      value: 16
-      objectReference: {fileID: 0}
     - target: {fileID: 1807243070816185480, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: m_Color.g
       value: 1
