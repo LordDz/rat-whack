@@ -1056,6 +1056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemPickupManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3086820238426293993, guid: dc4aaa381b1acf94995f65d279aa8765, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7792683241495414736, guid: dc4aaa381b1acf94995f65d279aa8765, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.586411

@@ -30,6 +30,8 @@ namespace Assets._Game
 
         private bool isScratching = false;
 
+        public bool IsMouseDown { get; private set; }
+
 
         void Awake()
         {
@@ -58,16 +60,21 @@ namespace Assets._Game
         {
             SetPos();
             Scratching();
+            CheckMouseDown();
+        }
+
+        private void CheckMouseDown()
+        {
+            IsMouseDown = Input.GetMouseButtonDown(0);
         }
 
         private void SetPos()
         {
-            Vector2 movePos;
 
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-         parentCanvas.transform as RectTransform,
-         Input.mousePosition, Camera.main,
-         out movePos);
+            parentCanvas.transform as RectTransform,
+            Input.mousePosition, Camera.main,
+            out Vector2 movePos);
 
             Vector3 pos = parentCanvas.transform.TransformPoint(movePos);
 
