@@ -132,6 +132,7 @@ namespace Assets._Game.Scripts.Rat
                 
                 if (dist < lowestDist)
                 {
+                    lowestDist = dist;
                     selectedIndex = i;
                 }
             }
