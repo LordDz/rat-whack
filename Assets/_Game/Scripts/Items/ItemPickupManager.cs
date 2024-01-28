@@ -27,7 +27,7 @@ namespace Assets._Game.Scripts.Items
         // Update is called once per frame
         void Update()
         {
-            //CheckCollisions();
+            CheckCollisions();
             //CheckCarriedByRats();
         }
 
