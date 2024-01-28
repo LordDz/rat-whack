@@ -76,9 +76,7 @@ namespace Assets._Game.Scripts.Items
                     if (isInRangeX && isInRangeY)
                     {
                         ItemPickup pickup = pickupsCarriedByRats[i];
-                        pickup.EggDropped();
                         pickupsCarriedByRats.Remove(pickup);
-                        pickup.transform.SetParent(null);
                         pickup.EggDropped();
                         ScoreHolder.Instance.AddFoodCollected();
 

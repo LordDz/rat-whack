@@ -31,6 +31,8 @@ namespace Assets._Game.Scripts.Items
         public void EggDropped()
         {
             spriteRenderer.color = Color.blue;
+            transform.SetParent(null);
+
             if (ratPickup != null)
             {
                 ratPickup.ItemDrop();

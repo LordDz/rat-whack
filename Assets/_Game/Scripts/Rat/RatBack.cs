@@ -37,7 +37,7 @@ namespace Assets._Game.Scripts.Rat
 
         void OnMouseEnter()
         {
-            if (!npc.RatMovement.IsTickled)
+            if (!npc.RatPickup.isCarringItem && !npc.RatMovement.IsTickled)
             {
                 scratches++;
                 CursorSprite.instance.StartScratching(true);
