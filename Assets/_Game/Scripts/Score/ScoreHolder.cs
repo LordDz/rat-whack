@@ -11,6 +11,7 @@ namespace Assets._Game.Scripts.Score
         [SerializeField] UIStat statBitten;
         [SerializeField] UIStat statPickedUp;
         [SerializeField] UIStat statFoodBroughtToPiles;
+        [SerializeField] AudioSource audioTickleWin;
 
         public int timesScratched = 0;
         public int timesTickled = 0;
@@ -33,6 +34,7 @@ namespace Assets._Game.Scripts.Score
         {
             timesTickled += 1;
             statTickled.SetValue(timesTickled);
+            audioTickleWin.Play();
         }
 
         public void AddBitten()
