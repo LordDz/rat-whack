@@ -1,10 +1,17 @@
-﻿using UnityEngine;
+﻿using Assets._Game.Scripts.UI;
+using UnityEngine;
 
 namespace Assets._Game.Scripts.Score
 {
     public class ScoreHolder : MonoBehaviour
     {
         public static ScoreHolder Instance;
+        [SerializeField] UIStat statScratches;
+        [SerializeField] UIStat statTickled;
+        [SerializeField] UIStat statBitten;
+        [SerializeField] UIStat statPickedUp;
+        [SerializeField] UIStat statFoodBroughtToPiles;
+
         public int timesScratched = 0;
         public int timesTickled = 0;
         public int timesBitten = 0;
@@ -19,28 +26,32 @@ namespace Assets._Game.Scripts.Score
         public void AddScratch()
         {
             timesScratched += 1;
+            statScratches.SetValue(timesScratched);
         }
 
         public void AddTickled()
         {
             timesTickled += 1;
+            statTickled.SetValue(timesTickled);
         }
 
         public void AddBitten()
         {
             timesBitten += 1;
+            statBitten.SetValue(timesBitten);
         }
 
         public void AddFoodPickedUp()
         {
             timesPickedUp += 1;
-            //Debug.Log("Pickups: " + timesPickedUp);
-
+            statPickedUp.SetValue(timesPickedUp);
         }
 
         public void AddFoodCollected()
         {
             timesFoodBroughtToPiles += 1;
+            statFoodBroughtToPiles.SetValue(timesFoodBroughtToPiles);
+
             //Debug.Log("Food: " + timesFoodBroughtToPiles);
         }
     }
