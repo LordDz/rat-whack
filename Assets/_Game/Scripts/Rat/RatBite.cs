@@ -17,7 +17,7 @@ namespace Assets._Game.Scripts.Rat
 
         void OnMouseEnter()
         {
-            if (!canBite || npc.RatPickup.isCarringItem) return;
+            if (!canBite || npc.RatPickup.IsCarringItem) return;
             DealDamage();
             SpawnBlood();
         }

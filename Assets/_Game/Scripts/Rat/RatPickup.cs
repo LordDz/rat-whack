@@ -8,20 +8,26 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] Transform headParent;
         [SerializeField] RatMovement ratMovement;
 
-        public bool isCarringItem { get; private set; }
+        public ItemPickup ItemPickedUp { get; private set; }
+
+        public bool IsCarringItem { get; private set; }
 
         public void ItemPickup(ItemPickup item)
         {
             item.transform.position = headParent.position;
             item.transform.SetParent(headParent);
             ratMovement.GoToClosestFoodPile();
-
-            isCarringItem = true;
+            ItemPickedUp = item;
+            IsCarringItem = true;
         }
 
         public void ItemDrop()
         {
-            isCarringItem = false;
+            IsCarringItem = false;
+            if (ItemPickedUp != null)
+            {
+                ItemPickedUp = null;
+            }
         }
     }
 }

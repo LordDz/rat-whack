@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets._Game.Scripts.Items;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets._Game.Scripts.Rat
@@ -16,6 +17,7 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] float timeScratches = 0.5f;
 
         [SerializeField] RatBack ratBack;
+        [SerializeField] RatPickup pickup;
 
         [SerializeField] SpriteRenderer spriteRenderer;
 
@@ -71,22 +73,23 @@ namespace Assets._Game.Scripts.Rat
 
         private void Update()
         {
-            if (transform.position.x != desiredX && transform.position.y != desiredY)
+            if (transform.position.x == desiredX && transform.position.y == desiredY)
+            {
+                SetRandomXY();
+            }
+            else
             {
                 if (cooldownWait <= 0)
                 {
                     MoveTowardPos(transform.position);
                     RotateZ();
+                    Debug.DrawLine(transform.position, new Vector3(desiredX, desiredY, transform.position.z), Color.red);
                 }
                 else
                 {
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                     cooldownWait -= Time.deltaTime;
                 }
-            }
-            else
-            {
-                SetRandomXY();
             }
         }
 
@@ -109,7 +112,12 @@ namespace Assets._Game.Scripts.Rat
 
             SetDesiredXY(pos.x, pos.y);
             IsTickled = false;
-            //Debug.Log("Setting random: " + pos);
+
+            if (pickup.IsCarringItem)
+            {
+                ItemPickupManager.instance.EggDropped(pickup.ItemPickedUp);
+                pickup.ItemDrop();
+            }
         }
 
         public void SetDesiredXY(float x, float y)
@@ -140,6 +148,7 @@ namespace Assets._Game.Scripts.Rat
         {
             float x = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
             float y = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedY * Time.deltaTime;
+
 
             //X
             if (pos.x < desiredX)

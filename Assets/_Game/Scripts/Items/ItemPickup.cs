@@ -1,4 +1,5 @@
 ﻿using Assets._Game.Scripts.Rat;
+using Assets._Game.Scripts.Score;
 using System.Collections;
 using UnityEngine;
 
@@ -32,12 +33,7 @@ namespace Assets._Game.Scripts.Items
         {
             spriteRenderer.color = Color.blue;
             transform.SetParent(null);
-
-            if (ratPickup != null)
-            {
-                ratPickup.ItemDrop();
-                ratPickup = null;
-            }
+            //ItemPickupManager.instance.EggDropped(this);
         }
     }
 }

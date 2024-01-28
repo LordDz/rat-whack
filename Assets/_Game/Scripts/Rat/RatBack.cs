@@ -37,7 +37,7 @@ namespace Assets._Game.Scripts.Rat
 
         private void OnMouseOver()
         {
-            if (!npc.RatPickup.isCarringItem && !npc.RatMovement.IsTickled && CursorSprite.instance.IsMouseDown)
+            if (!npc.RatPickup.IsCarringItem && !npc.RatMovement.IsTickled && CursorSprite.instance.IsMouseDown)
             {
                 scratches++;
                 CursorSprite.instance.StartScratching(true);

@@ -154,6 +154,7 @@ MonoBehaviour:
   timeBetweenWait: 0.2
   timeScratches: 0.5
   ratBack: {fileID: 5137653504479183187}
+  pickup: {fileID: 347263013522116437}
   spriteRenderer: {fileID: 6606400649788333257}
   followMouseCursor: 0
   zRotMin: -4

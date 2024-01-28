@@ -8,6 +8,7 @@ namespace Assets._Game.Scripts.Items
 {
     public class ItemPickupManager : MonoBehaviour
     {
+        public static ItemPickupManager instance;
         public List<ItemPickup> items;
         public List<ItemPickup> pickupsActive;
         public List<ItemPickup> pickupsCarriedByRats;
@@ -18,12 +19,16 @@ namespace Assets._Game.Scripts.Items
         private float pileX = 1;
         private float pileY = 1;
 
+        private void Awake()
+        {
+            instance = this;
+        }
 
         // Update is called once per frame
         void Update()
         {
             CheckCollisions();
-            CheckCarriedByRats();
+            //CheckCarriedByRats();
         }
 
         private void CheckCollisions()
@@ -32,7 +37,7 @@ namespace Assets._Game.Scripts.Items
 
             foreach (var rat in RatManager.instance.listActiveRats)
             {
-                if (rat.RatPickup.isCarringItem || rat.RatMovement.IsTickled) continue;
+                if (rat.RatPickup.IsCarringItem || rat.RatMovement.IsTickled) continue;
 
                 Vector3 ratPos = rat.RatPickup.transform.position;
                 for (int i = 0; i < pickupsActive.Count; i++)
@@ -56,6 +61,13 @@ namespace Assets._Game.Scripts.Items
                     }
                 }
             }
+        }
+
+        public void EggDropped(ItemPickup pickup)
+        {
+            pickupsCarriedByRats.Remove(pickup);
+            ScoreHolder.Instance.AddFoodCollected();
+            pickup.EggDropped();
         }
 
         private void CheckCarriedByRats()
