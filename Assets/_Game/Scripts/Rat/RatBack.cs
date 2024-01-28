@@ -45,7 +45,17 @@ namespace Assets._Game.Scripts.Rat
             }
         }
 
-   
+        private void OnMouseEnter()
+        {
+            if (!npc.RatPickup.IsCarringItem && !npc.RatMovement.IsTickled)
+            {
+                scratches++;
+                CursorSprite.instance.StartScratching(true);
+                CheckScratches();
+            }
+        }
+
+
         private void CheckScratches()
         {
             switch (scratches)
