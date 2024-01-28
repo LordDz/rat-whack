@@ -21,6 +21,13 @@ namespace Assets._Game.Scripts.Rat
 
         [SerializeField] bool followMouseCursor = false;
 
+        [SerializeField] float zRotMin;
+        [SerializeField] float zRotMax;
+        [SerializeField] float zRotSpeed;
+
+        private float rotZ = 0;
+        private int zRotDirection = 1;
+
         public bool IsTickled { get; private set; }
 
         private float cooldownMoving = 0;
@@ -46,29 +53,35 @@ namespace Assets._Game.Scripts.Rat
             GoToClosestFoodPile();
         }
 
+        private void RotateZ()
+        {
+            transform.rotation = Quaternion.Euler(0, 0, rotZ);
+            rotZ += zRotSpeed * zRotDirection;
+
+            if (rotZ > zRotMax)
+            {
+                zRotDirection = -1;
+            }
+            else if (rotZ < zRotMin)
+            {
+                zRotDirection = 1;
+            }
+        }
+
+
         private void Update()
         {
             if (transform.position.x != desiredX && transform.position.y != desiredY)
             {
-                if (cooldownMoving > 0)
+                if (cooldownWait <= 0)
                 {
-                    cooldownMoving -= Time.deltaTime;
-                    
                     MoveTowardPos(transform.position);
-
-                    if (cooldownMoving <= 0)
-                    {
-                        cooldownWait = timeBetweenWait;
-                    }
+                    RotateZ();
                 }
                 else
                 {
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
                     cooldownWait -= Time.deltaTime;
-
-                    if (cooldownWait <= 0)
-                    {
-                        cooldownMoving = timeMoving;
-                    }
                 }
             }
             else

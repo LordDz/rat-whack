@@ -156,9 +156,9 @@ MonoBehaviour:
   ratBack: {fileID: 5137653504479183187}
   spriteRenderer: {fileID: 6606400649788333257}
   followMouseCursor: 0
-  zRotMin: -8
-  zRotMax: 0
-  zRotSpeed: 1
+  zRotMin: -4
+  zRotMax: 4
+  zRotSpeed: 0.06
   desiredX: 0
   desiredY: 0
 --- !u!114 &6298479965936150558
