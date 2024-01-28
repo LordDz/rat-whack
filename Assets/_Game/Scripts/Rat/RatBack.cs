@@ -49,8 +49,8 @@ namespace Assets._Game.Scripts.Rat
         {
             if (!npc.RatPickup.IsCarringItem && !npc.RatMovement.IsTickled)
             {
-                scratches++;
                 CursorSprite.instance.StartScratching(true);
+                scratches++;
                 CheckScratches();
             }
         }
@@ -76,21 +76,21 @@ namespace Assets._Game.Scripts.Rat
                     //cooldownScratch = scratchWait;
 
                     //spriteRenderer.color = Color.blue;
-                    RatTickled();
+                    RatScratched();
 
                     //RatScratched();
                     break;
 
-                //case 3:
-                //    cooldownScratch = scratchWait;
+                case 3:
+                    cooldownScratch = scratchWait;
 
-                //    //spriteRenderer.color = Color.red;
-                //    RatScratched();
-                //    break;
+                    //spriteRenderer.color = Color.red;
+                    RatTickled();
+                    break;
 
-                //case 4:
-                //    //spriteRenderer.color = Color.white;
-                //    break;
+                    //case 4:
+                    //    //spriteRenderer.color = Color.white;
+                    //    break;
             }
         }
 

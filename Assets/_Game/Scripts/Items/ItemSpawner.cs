@@ -67,7 +67,7 @@ namespace Assets._Game.Scripts.Items
                 SetDesiredXY(pos.x, pos.y);
                 item.transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
                 item.transform.SetParent(transform);
-                Debug.Log("Spawned item: " + spawned.name);
+                //Debug.Log("Spawned item: " + spawned.name);
             }
             isActive = true;
             cooldown = timeWaitPerSpawn;
@@ -150,7 +150,7 @@ namespace Assets._Game.Scripts.Items
 
         private void SpawnerOutside()
         {
-            Debug.Log("Spawner is back at start");
+            //Debug.Log("Spawner is back at start");
             SetDesiredXY(startX, startY);
             transform.position = new Vector3(startX, startY, transform.position.z);
             isActive = false;
