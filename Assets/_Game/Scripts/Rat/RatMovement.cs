@@ -12,15 +12,12 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] float tickledSpeedX = 1f;
         [SerializeField] float tickledSpeedY = 1f;
 
-        [SerializeField] float timeMoving = 1f;
-        [SerializeField] float timeBetweenWait = 1;
         [SerializeField] float timeScratches = 0.5f;
 
         [SerializeField] RatBack ratBack;
         [SerializeField] RatPickup pickup;
 
         [SerializeField] SpriteRenderer spriteRenderer;
-
         [SerializeField] bool followMouseCursor = false;
 
         [SerializeField] float zRotMin;
@@ -32,7 +29,6 @@ namespace Assets._Game.Scripts.Rat
 
         public bool IsTickled { get; private set; }
 
-        private float cooldownMoving = 0;
         private float cooldownWait = 0;
         public float desiredX = 0;
         public float desiredY = 0;
@@ -45,7 +41,6 @@ namespace Assets._Game.Scripts.Rat
         public void RatScratched()
         {
             //TODO: Do something cool here
-            cooldownMoving = 0;
             cooldownWait = timeScratches;
         }
 
@@ -147,7 +142,7 @@ namespace Assets._Game.Scripts.Rat
         private void MoveTowardPos(Vector3 pos)
         {
             float x = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
-            float y = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedY * Time.deltaTime;
+            float y = IsTickled ? tickledSpeedY * Time.deltaTime : ratSpeedY * Time.deltaTime;
 
 
             //X
