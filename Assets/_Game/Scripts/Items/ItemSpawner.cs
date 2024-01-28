@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 namespace Assets._Game.Scripts.Items
 {
@@ -19,6 +20,10 @@ namespace Assets._Game.Scripts.Items
 
         [SerializeField] float timeWaitPerSpawn = 10f;
 
+        private void Start()
+        {
+            SelectRandomPickup();
+        }
 
         // Update is called once per frame
         void Update()
@@ -59,6 +64,7 @@ namespace Assets._Game.Scripts.Items
                 SetDesiredXY(pos.x, pos.y);
                 item.transform.position = transform.position;
                 item.transform.SetParent(transform);
+                Debug.Log("Spawned item: " + spawned.name);
             }
             isActive = true;
             cooldown = timeWaitPerSpawn;
@@ -135,13 +141,15 @@ namespace Assets._Game.Scripts.Items
         {
             item.transform.SetParent(null);
             ItemPickupManager.instance.AddItem(item);
-            desiredX = startX;
-            desiredY = startY;
+            SetDesiredXY(startX, startY);
             item = null;
         }
 
         private void SpawnerOutside()
         {
+            Debug.Log("Spawner is back at start");
+            SetDesiredXY(startX, startY);
+            transform.position = new Vector3(startX, startY, transform.position.z);
             isActive = false;
         }
     }

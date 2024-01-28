@@ -254,6 +254,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 390131596938637592, guid: 1620f09538dd73a4ca7e617a09ac2729, type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4467971123639265601, guid: 1620f09538dd73a4ca7e617a09ac2729, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -551,6 +555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2796430832987938247, guid: 44711c04d0bef714b973fb732c039dd9, type: 3}
+      propertyPath: timeWaitPerSpawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3914260709276795503, guid: 44711c04d0bef714b973fb732c039dd9, type: 3}
       propertyPath: m_Name
       value: RatArea

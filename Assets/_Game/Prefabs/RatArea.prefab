@@ -168,6 +168,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &384619693099883392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2767656153080984004}
+  m_Layer: 0
+  m_Name: ItemArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2767656153080984004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384619693099883392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5038772290367455765}
+  m_Father: {fileID: 7152063374756544950}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932319592667637627
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +735,7 @@ Transform:
   m_Children:
   - {fileID: 5080993182204755588}
   - {fileID: 6792375665738094689}
-  - {fileID: 5038772290367455765}
+  - {fileID: 2767656153080984004}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4149183108973863509
@@ -1279,7 +1311,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7152063374756544950}
+  m_Father: {fileID: 2767656153080984004}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2796430832987938247
 MonoBehaviour:
@@ -1313,7 +1345,7 @@ MonoBehaviour:
   startY: 30
   speedXY: 10
   isActive: 1
-  timeWaitPerSpawn: 10
+  timeWaitPerSpawn: 1
 --- !u!212 &3010136945795175486
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1356,8 +1388,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bbe705a7d2dbdcb49b99ab12a9e179f8, type: 3}
-  m_Color: {r: 0.48427665, g: 0.11837152, b: 0.01370586, a: 1}
-  m_FlipX: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5.85, y: 3.14}
