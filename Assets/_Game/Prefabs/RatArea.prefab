@@ -1346,6 +1346,7 @@ MonoBehaviour:
   speedXY: 10
   isActive: 1
   timeWaitPerSpawn: 1
+  itemSpawnPosZ: 0.1
 --- !u!212 &3010136945795175486
 SpriteRenderer:
   m_ObjectHideFlags: 0

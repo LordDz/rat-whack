@@ -19,6 +19,9 @@ namespace Assets._Game.Scripts.Items
         [SerializeField] bool isActive = true;
 
         [SerializeField] float timeWaitPerSpawn = 10f;
+        [SerializeField] float xOffset = 0.1f;
+        [SerializeField] float yOffset = 0.1f;
+        [SerializeField] float zOffset = 0.1f;
 
         private void Start()
         {
@@ -62,7 +65,7 @@ namespace Assets._Game.Scripts.Items
                 item = spawned;
                 var pos = listPutPositions[Random.Range(0, listPutPositions.Count - 1)].transform.position;
                 SetDesiredXY(pos.x, pos.y);
-                item.transform.position = transform.position;
+                item.transform.position = new Vector3(transform.position.x + xOffset, transform.position.y + yOffset, transform.position.z + zOffset);
                 item.transform.SetParent(transform);
                 Debug.Log("Spawned item: " + spawned.name);
             }
