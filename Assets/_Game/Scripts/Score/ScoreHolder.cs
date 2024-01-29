@@ -30,9 +30,9 @@ namespace Assets._Game.Scripts.Score
             statScratches.SetValue(timesScratched);
         }
 
-        public void AddTickled()
+        public void AddTickled(int score)
         {
-            timesTickled += 1;
+            timesTickled += score;
             statTickled.SetValue(timesTickled);
             audioTickleWin.Play();
         }
@@ -40,6 +40,14 @@ namespace Assets._Game.Scripts.Score
         public void AddBitten()
         {
             timesBitten += 1;
+            timesTickled -= 4;
+
+            if (timesTickled < 0)
+            {
+                timesTickled = 0;
+            }
+
+            statTickled.SetValue(timesTickled);
             statBitten.SetValue(timesBitten);
         }
 

@@ -413,7 +413,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b65f1af550f9d2c45bd38be709b52d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelIndex: 0
+  timeDivider: 0.2
   levelMusic: {fileID: 2410700613055565998}
+  statLevel: {fileID: 0}
 --- !u!82 &2410700613055565998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -424,9 +427,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: af8f531dba216b5419ed6512ef703464, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e58e6f6d1bc4e4544baf5c6878151e90, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2081,7 +2084,7 @@ MonoBehaviour:
   - {fileID: 1300626344030593621}
   startX: 30
   startY: 30
-  speedXY: 10
+  speedXY: 15
   isActive: 1
   timeWaitPerSpawn: 1
   xOffset: 0.1

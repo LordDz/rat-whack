@@ -6,21 +6,41 @@ namespace Assets._Game.Scripts
 {
     public class Level : MonoBehaviour
     {
+        public static Level instance;
         public int levelIndex = 0;
-        [SerializeField] float timeDivider = 0.1f;
+        [SerializeField] float timeDivider = 0.2f;
         [SerializeField] AudioSource levelMusic;
         [SerializeField] UIStat statLevel;
+        [SerializeField] UIStat statTime;
+
+        public float cooldown = 30f;
+        public float timeWait = 30f;
 
         private bool levelStarted = false;
 
+        private void Awake()
+        {
+            instance = this;
+        }
+
         private void Start()
         {
+            levelMusic.Play();
             LevelStart();
         }
 
         private void Update()
         {
-            if (levelStarted && !levelMusic.isPlaying)
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                Application.Quit();
+            }
+
+            cooldown -= Time.deltaTime;
+
+            int seconds = (int)cooldown;
+            statTime.SetValue(seconds);
+
+            if (levelStarted && cooldown <= 0)
             {
                 LevelDone();
             }
@@ -28,8 +48,7 @@ namespace Assets._Game.Scripts
 
         private void LevelStart()
         {
-            levelMusic.Stop();
-            if (levelIndex > 0 && levelIndex < 10)
+            if (levelIndex > 0 && levelIndex < 20)
             {
                 Time.timeScale = 1 + (levelIndex * timeDivider);
                 levelMusic.pitch = 1 + (levelIndex * timeDivider);
@@ -39,7 +58,8 @@ namespace Assets._Game.Scripts
 
             levelIndex++;
             levelStarted = true;
-            levelMusic.Play();
+            cooldown = timeWait;
+
             statLevel.SetValue(levelIndex);
         }
 

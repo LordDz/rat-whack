@@ -9,6 +9,8 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] float ratSpeedX = 0.1f;
         [SerializeField] float ratSpeedY = 0.1f;
 
+        [SerializeField] float itemSpeedXY = 1f;
+
         [SerializeField] float tickledSpeedX = 1f;
         [SerializeField] float tickledSpeedY = 1f;
 
@@ -145,6 +147,11 @@ namespace Assets._Game.Scripts.Rat
             float x = IsTickled ? tickledSpeedX * Time.deltaTime : ratSpeedX * Time.deltaTime;
             float y = IsTickled ? tickledSpeedY * Time.deltaTime : ratSpeedY * Time.deltaTime;
 
+            if (pickup.IsCarringItem)
+            {
+                x = itemSpeedXY * Time.deltaTime;
+                y = itemSpeedXY * Time.deltaTime;
+            }
 
             //X
             if (pos.x < desiredX)

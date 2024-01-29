@@ -25,13 +25,13 @@ namespace Assets._Game.Scripts.Items
 
         public void EggPickedUp(RatPickup pickup)
         {
-            spriteRenderer.color = Color.red;
+            //spriteRenderer.color = Color.red;
             ratPickup = pickup;
         }
 
         public void EggDropped()
         {
-            spriteRenderer.color = Color.blue;
+            //spriteRenderer.color = Color.blue;
             transform.SetParent(null);
             //ItemPickupManager.instance.EggDropped(this);
         }

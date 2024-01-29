@@ -11,8 +11,9 @@ namespace Assets._Game.Scripts.Rat
         [SerializeField] RatMovement movement;
         [SerializeField] RatSpriteChanger ratSpriteChanger;
         [SerializeField] SpriteRenderer spriteRenderer;
+        [SerializeField] int scoreTickle = 1;
 
-        private float scratchWait = 1.5f;
+        private float scratchWait = 3f;
         private float cooldownScratch = 0;
 
         public int scratches = 0;
@@ -115,7 +116,7 @@ namespace Assets._Game.Scripts.Rat
                 audioTickled.Play();
             }
 
-            ScoreHolder.Instance.AddTickled();
+            ScoreHolder.Instance.AddTickled(scoreTickle);
         }
     }
 }

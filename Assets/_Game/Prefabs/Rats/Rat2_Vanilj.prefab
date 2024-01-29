@@ -124,6 +124,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5137653504479183187, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
+      propertyPath: scoreTickle
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6298479965936150558, guid: 5cee21ff255f53140839f1fdad4ab80b, type: 3}
       propertyPath: sprites.Array.data[0]
       value: 

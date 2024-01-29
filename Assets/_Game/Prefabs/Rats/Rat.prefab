@@ -148,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ratSpeedX: 6
   ratSpeedY: 6
+  itemSpeedXY: 18
   tickledSpeedX: 32
   tickledSpeedY: 32
   timeScratches: 0.5
