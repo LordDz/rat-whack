@@ -13,8 +13,8 @@ namespace Assets._Game.Scripts
         [SerializeField] UIStat statLevel;
         [SerializeField] UIStat statTime;
 
-        private float cooldown = 90f;
-        [SerializeField] float timePerLevel = 90f;
+        private float cooldown = 60f;
+        [SerializeField] float timePerLevel = 60f;
 
         private bool levelStarted = false;
 
