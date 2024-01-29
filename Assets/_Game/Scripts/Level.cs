@@ -8,13 +8,13 @@ namespace Assets._Game.Scripts
     {
         public static Level instance;
         public int levelIndex = 0;
-        [SerializeField] float timeDivider = 0.2f;
+        [SerializeField] float timeDivider = 0.1f;
         [SerializeField] AudioSource levelMusic;
         [SerializeField] UIStat statLevel;
         [SerializeField] UIStat statTime;
 
-        public float cooldown = 30f;
-        public float timeWait = 30f;
+        private float cooldown = 90f;
+        [SerializeField] float timePerLevel = 90f;
 
         private bool levelStarted = false;
 
@@ -25,6 +25,8 @@ namespace Assets._Game.Scripts
 
         private void Start()
         {
+            cooldown = timePerLevel;
+            levelMusic.loop = true;
             levelMusic.Play();
             LevelStart();
         }
@@ -54,11 +56,11 @@ namespace Assets._Game.Scripts
                 levelMusic.pitch = 1 + (levelIndex * timeDivider);
             }
             Debug.Log("Level Started with timescale: " + Time.timeScale);
-            Debug.Log("Music length:: " + levelMusic.time);
+            Debug.Log("Music pitch:: " + levelMusic.pitch);
 
             levelIndex++;
             levelStarted = true;
-            cooldown = timeWait;
+            cooldown = timePerLevel;
 
             statLevel.SetValue(levelIndex);
         }

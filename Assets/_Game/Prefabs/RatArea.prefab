@@ -414,9 +414,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 0
-  timeDivider: 0.2
+  timeDivider: 0.1
   levelMusic: {fileID: 2410700613055565998}
   statLevel: {fileID: 0}
+  statTime: {fileID: 0}
+  timePerLevel: 90
 --- !u!82 &2410700613055565998
 AudioSource:
   m_ObjectHideFlags: 0
@@ -431,7 +433,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
