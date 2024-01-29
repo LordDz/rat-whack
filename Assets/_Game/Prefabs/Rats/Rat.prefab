@@ -503,6 +503,7 @@ MonoBehaviour:
   movement: {fileID: 493381103575957499}
   ratSpriteChanger: {fileID: 6298479965936150558}
   spriteRenderer: {fileID: 6414964249620773646}
+  scoreTickle: 1
   scratches: 0
 --- !u!61 &5790388165893686527
 BoxCollider2D:

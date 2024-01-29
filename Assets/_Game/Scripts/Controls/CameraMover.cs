@@ -18,7 +18,6 @@ namespace Assets._Game
         private void Awake()
         {
             cameraMain = Camera.main.gameObject;
-            Cursor.visible = true;
         }
 
         // Update is called once per frame

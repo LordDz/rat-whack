@@ -7,7 +7,6 @@ namespace Assets._Game
 {
     public class CursorSprite : MonoBehaviour
     {
-
         [DllImport("user32.dll")]
 
         public static extern bool SetCursorPos(int X, int Y);
