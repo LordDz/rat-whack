@@ -74,15 +74,6 @@ namespace Assets._Game.Scripts.Rat
                     break;
 
                 case 2:
-                    //cooldownScratch = scratchWait;
-
-                    //spriteRenderer.color = Color.blue;
-                    RatScratched();
-
-                    //RatScratched();
-                    break;
-
-                case 3:
                     cooldownScratch = scratchWait;
 
                     //spriteRenderer.color = Color.red;
